@@ -10,7 +10,7 @@ class FIFOCache(BaseCaching):
         """Initializes the class"""
         super().__init__()
         self.key_order = []
-    
+
     def put(self, key, item):
         """Adds the item to the cache"""
         if key is not None and item is not None:
@@ -22,7 +22,7 @@ class FIFOCache(BaseCaching):
                 print('DISCARD: {}'.format(oldest_key))
             self.cache_data[key] = item
             self.key_order.append(key)
-    
+
     def get(self, key):
         """ This method returns an item by the key"""
         if key is None or key not in self.cache_data:
